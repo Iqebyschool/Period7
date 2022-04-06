@@ -1,6 +1,9 @@
 ﻿Public Class Form1
     Private m_Previous As System.Nullable(Of Point) = Nothing
     Dim m_shapes As New Collection
+    Dim c As Color
+    Dim w As Integer
+    Dim type As String
 
 
 
@@ -10,15 +13,43 @@
     End Sub
 
     Private Sub pictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
+
+        Dim d As Object
         If m_Previous IsNot Nothing Then
-            Dim l As New Square(PictureBox1.Image, m_Previous, e.Location)
-            l.Pen = New Pen(Button1.BackColor)
-            l.w = TrackBar1.Value
-            l.h = TrackBar2.Value
-            m_shapes.Add(l)
-            PictureBox1.Invalidate()
-            m_Previous = e.Location
+            If type = "Line" Then
+                d = New Line(PictureBox1.Image, m_Previous, e.Location)
+                d.Pen = New Pen(c, w)
+            End If
+            If type = "rectangle" Then
+                d = New Square(PictureBox1.Image, m_Previous, e.Location)
+                d.Pen = New Pen(c, w)
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
+            End If
+            If type = "polygon" Then
+                d = New Polygon(PictureBox1.Image, m_Previous, e.Location)
+                d.Pen = New Pen(c, w)
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
+            End If
+            If type = "Ngon" Then
+                d = New Ngon(PictureBox1.Image, m_Previous, e.Location)
+                d.Pen = New Pen(c, w)
+                d.radius = TrackBar3.Value
+                d.Sides = TrackBar4.Value
+            End If
+            If type = "Picture" Then
+                d = New PBox(PictureBox1.Image, m_Previous, e.Location)
+                d.w = TrackBar1.Value
+                d.h = TrackBar1.Value
+
+                d.picture = PictureBox2.Image
+            End If
         End If
+
+        m_shapes.Add(d)
+            PictureBox1.Invalidate()
+        m_Previous = e.Location
     End Sub
 
     Private Sub pictureBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp
@@ -44,15 +75,17 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         ColorDialog1.ShowDialog()
         Button1.BackColor = ColorDialog1.Color
+        c = Button1.BackColor
 
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        c = sender.backcolor
 
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-
+        c = sender.backcolor
     End Sub
 
     Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
@@ -66,5 +99,25 @@
 
     Private Sub TrackBar2_Scroll(sender As Object, e As EventArgs) Handles TrackBar2.Scroll
 
+    End Sub
+
+    Private Sub Square1_Click(sender As Object, e As EventArgs) Handles Square1.Click
+        type = "Line"
+    End Sub
+
+    Private Sub Rect1_Click(sender As Object, e As EventArgs) Handles Rect1.Click
+        type = "rectangle"
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        type = "polygon"
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        type = "Ngon"
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        type = "Picture"
     End Sub
 End Class

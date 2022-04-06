@@ -33,10 +33,20 @@ Partial Class Form1
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.TrackBar2 = New System.Windows.Forms.TrackBar()
         Me.TrackBar3 = New System.Windows.Forms.TrackBar()
+        Me.Square1 = New System.Windows.Forms.Button()
+        Me.Rect1 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.TrackBar4 = New System.Windows.Forms.TrackBar()
+        Me.TrackBar5 = New System.Windows.Forms.TrackBar()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -49,11 +59,10 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(723, 365)
+        Me.Button1.Location = New System.Drawing.Point(675, 78)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(46, 25)
+        Me.Button1.Size = New System.Drawing.Size(26, 25)
         Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Clear"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'TrackBar1
@@ -92,7 +101,7 @@ Partial Class Form1
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(694, 409)
+        Me.Button4.Location = New System.Drawing.Point(694, 453)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 6
@@ -119,11 +128,84 @@ Partial Class Form1
         Me.TrackBar3.TabIndex = 8
         Me.TrackBar3.Value = 10
         '
+        'Square1
+        '
+        Me.Square1.Location = New System.Drawing.Point(694, 424)
+        Me.Square1.Name = "Square1"
+        Me.Square1.Size = New System.Drawing.Size(75, 23)
+        Me.Square1.TabIndex = 9
+        Me.Square1.Text = "Square"
+        Me.Square1.UseVisualStyleBackColor = True
+        '
+        'Rect1
+        '
+        Me.Rect1.Location = New System.Drawing.Point(694, 393)
+        Me.Rect1.Name = "Rect1"
+        Me.Rect1.Size = New System.Drawing.Size(75, 23)
+        Me.Rect1.TabIndex = 10
+        Me.Rect1.Text = "Rectange"
+        Me.Rect1.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(679, 287)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 11
+        Me.Button5.Text = "Polygon"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(694, 364)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 12
+        Me.Button6.Text = "n-gone"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'TrackBar4
+        '
+        Me.TrackBar4.Location = New System.Drawing.Point(260, 438)
+        Me.TrackBar4.Maximum = 500
+        Me.TrackBar4.Minimum = 10
+        Me.TrackBar4.Name = "TrackBar4"
+        Me.TrackBar4.Size = New System.Drawing.Size(104, 45)
+        Me.TrackBar4.TabIndex = 13
+        Me.TrackBar4.Value = 10
+        '
+        'TrackBar5
+        '
+        Me.TrackBar5.Location = New System.Drawing.Point(419, 438)
+        Me.TrackBar5.Maximum = 500
+        Me.TrackBar5.Minimum = 10
+        Me.TrackBar5.Name = "TrackBar5"
+        Me.TrackBar5.Size = New System.Drawing.Size(104, 45)
+        Me.TrackBar5.TabIndex = 14
+        Me.TrackBar5.Value = 10
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.terror_man
+        Me.PictureBox2.Location = New System.Drawing.Point(128, 433)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(54, 50)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 15
+        Me.PictureBox2.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(781, 487)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.TrackBar5)
+        Me.Controls.Add(Me.TrackBar4)
+        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Rect1)
+        Me.Controls.Add(Me.Square1)
         Me.Controls.Add(Me.TrackBar3)
         Me.Controls.Add(Me.TrackBar2)
         Me.Controls.Add(Me.Button4)
@@ -139,6 +221,9 @@ Partial Class Form1
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -155,4 +240,11 @@ Partial Class Form1
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents TrackBar2 As TrackBar
     Friend WithEvents TrackBar3 As TrackBar
+    Friend WithEvents Square1 As Button
+    Friend WithEvents Rect1 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents TrackBar4 As TrackBar
+    Friend WithEvents TrackBar5 As TrackBar
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
